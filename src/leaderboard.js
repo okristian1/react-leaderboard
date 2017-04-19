@@ -5,28 +5,20 @@ import axios from 'axios';
 
 
 class Leaderboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      list: []
-    };
-  }
+  state = { list: [] };
 
 componentDidMount() {
-  function getCampers(list) {
+    let list = 'recent';
     let temp = [];
     axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/'+list)
       .then(result=> {
         result.data.forEach((camper) => {
           temp.unshift(camper);
           this.setState({ list: temp})
-          console.log(temp);
+          console.log(camper);
         });
       })
     }
-  }
-
-
   render() {
     return (
       <div>
