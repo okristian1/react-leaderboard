@@ -18,6 +18,16 @@
   font-size: large;
 }
 
+.button {
+  width: 100px;
+  height: 30px;
+  border-radius: 3px;
+}
+.button-blue {
+  color: white;
+  background: blue;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

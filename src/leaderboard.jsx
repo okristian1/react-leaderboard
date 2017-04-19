@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-
-
 class Leaderboard extends Component {
   state = { list: [] };
 
@@ -15,7 +13,6 @@ componentDidMount() {
         result.data.forEach((camper) => {
           temp.unshift(camper);
           this.setState({ list: temp})
-          console.log(camper);
         });
       })
     }
@@ -33,7 +30,7 @@ componentDidMount() {
           {this.state.list.map(camper =>
             <tr key={camper.username}>
             <td>{camper.username}</td>
-            <td>{camper.img}</td>
+            <td><img src={camper.img}></img></td>
             <td>{camper.recent}</td>
             <td>{camper.alltime}</td>
             </tr>

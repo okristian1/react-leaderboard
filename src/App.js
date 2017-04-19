@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Leaderboard from './leaderboard.js';
-
+import Leaderboard from './leaderboard.jsx';
 
 class App extends Component {
   render() {
-    return (
+  return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -21,8 +20,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-//https://fcctop100.herokuapp.com/api/fccusers/top/recent
-// get https://fcctop100.herokuapp.com/api/fccusers/top/alltime
