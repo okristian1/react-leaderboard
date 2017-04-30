@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Leaderboard from './leaderboard.js';
+import Leaderboard from './components/leaderboard.js';
 
 class App extends Component {
   render() {

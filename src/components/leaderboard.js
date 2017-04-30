@@ -8,25 +8,36 @@ class Leaderboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
+      campers: 'recent',
       list: []
     };
   }
 
 componentDidMount() {
-    let list = 'recent';
     let temp = [];
-    axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/'+list)
+    axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/'+this.state.campers)
       .then(result=> {
         result.data.forEach((camper) => {
           temp.unshift(camper);
-          this.setState({ list: temp})
-          console.log(temp);
+        });
+        this.setState({ list: temp})
+        this.setState(function() {
+          return {
+            loading: false
+          }
         });
       })
     }
 
 
   render() {
+    var loading = this.state.loading;
+    if(loading) {
+      return(
+        <p>Loading</p>
+      )
+    }
     return (
       <div>
         <table>
