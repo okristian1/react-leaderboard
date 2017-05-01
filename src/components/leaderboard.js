@@ -14,6 +14,7 @@ class Leaderboard extends Component {
 
 
 updateCampers(campers) {
+  console.log("running");
   let list;
   let temp = [];
   let id;
