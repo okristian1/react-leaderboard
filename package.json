@@ -1,11 +1,14 @@
 {
-  "name": "derp",
+  "name": "react-leaderboard",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
   "dependencies": {
+    "axios": "^0.16.1",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
