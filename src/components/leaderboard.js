@@ -20,7 +20,7 @@ updateCampers(campers) {
   if(campers)
     list='recent';
     else
-    list = 'alltime';
+    list='alltime';
 
   axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/'+list)
     .then(result=> {
@@ -48,12 +48,9 @@ componentDidMount() {
 
 handleClick = () => {
   this.setState(prevState => ({
-    campers: !prevState.campers
-  }));
-  this.updateCampers(this.state.campers)
-  console.log(this.state.campers);
-  console.log('clicked');
-}
+      campers: !prevState.campers
+    }), () => this.updateCampers(this.state.campers));
+  }
 
 
 
@@ -66,27 +63,29 @@ handleClick = () => {
     }
     return (
       <div className="column">
-      <button onClick={this.handleClick}>
-      Switch list </button>
+      <button className="toggle" onClick={this.handleClick}>
+         {this.state.campers ? 'Most Points Last 30 days' : 'Most Points All Time'}
+      </button>
         <table>
         <tbody>
         <tr>
-        <td>id</td>
-        <td>Username</td>
-        <td>Avatar</td>
-        <td>Last 30 days</td>
-        <td>All Time</td>
+        <th>#</th>
+        <th>User</th>
+        <th>Last 30 days</th>
+        <th>All Time</th>
         </tr>
           {this.state.list.map(camper =>
             <tr key={camper.username}>
             <td className="id">{camper.id}</td>
-            <td className="user">{camper.username}</td>
-            <td>
-              <img
+            <td className="user">
+              <a href={"https://www.freecodecamp.com/"+camper.username}>
+                <img
                 className="avatar"
                 src={camper.img}
                 alt={'Avatar for '+camper.username}
-                />
+                href={"https://www.freecodecamp.com/"+camper.username}
+                /> </a>
+                <a href={"https://www.freecodecamp.com/"+camper.username}>{camper.username}</a>
               </td>
             <td className="score">{camper.recent}</td>
             <td className="score">{camper.alltime}</td>
