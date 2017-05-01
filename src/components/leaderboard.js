@@ -99,4 +99,4 @@ handleClick = () => {
   }
 }
 
-export default Leaderboard;
+module.exports = Leaderboard;
