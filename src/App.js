@@ -1,28 +1,20 @@
+import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
-var React = require('react');
-var ReactRouter = require('react-router-dom');
-var Router = ReactRouter.BrowserRouter;
-var Leaderboard = require('./components/leaderboard.js');
-var Switch = ReactRouter.Switch;
-var Route = ReactRouter.Route;
+import Leaderboard from './components/leaderboard.js';
 
-
-class App extends React.Component {
+class App extends Component {
   render() {
-    return (
-      <Router>
-        <div className="App">
+  return (
+      <div className="App">
         <div className="App-header">
-        <h1>Leaderboard</h1>
-          <Switch>
-            <Route exact path='/' component={Leaderboard} />
-            <Route render={function() {
-              return <p>Not Found</p>
-            }} />
-          </Switch>
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1>Leaderboard</h1>
         </div>
+        <div>
+        <Leaderboard />
         </div>
-      </Router>
+      </div>
     );
   }
 }
