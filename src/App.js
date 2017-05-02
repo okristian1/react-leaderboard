@@ -14,7 +14,7 @@ class App extends React.Component {
       <Router>
         <div className="App">
           <Switch>
-            <Route path='/app2' component={Leaderboard} />
+            <Route path='/leaderboard' component={Leaderboard} />
             <Route render={function() {
               return <p>Not Found</p>
             }} />
