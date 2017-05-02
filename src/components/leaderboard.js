@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+var Loading = require('./Loading');
 
 
 class Leaderboard extends Component {
@@ -59,7 +60,7 @@ handleClick = () => {
     var loading = this.state.loading;
     if(loading) {
       return(
-        <p>Loading</p>
+        <Loading />
       )
     }
     return (
